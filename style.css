@@ -1,0 +1,241 @@
+/*********************************
+        DEFAULT SETTING
+**********************************/
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+:root{
+    --white: #fff;
+    --black: #000;
+    --dark: #171615;
+    --neon_green: #9cec31;
+    
+    --default_font:"Mukta", sans-serif;
+    --title_font:"Raleway", sans-serif;
+}
+
+*, html{
+    scroll-behavior: smooth;
+}
+
+*, *:after, *:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body{
+    margin:0;
+    overflow-x:hidden !important;
+    font-family: var(--default_font);
+}
+
+a{
+    text-decoration:none !important;
+    min-width: fit-content;
+    width: fit-content;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+}
+
+a, button{
+    transition:0.5s;
+}
+
+em{
+    font-style:normal;
+}
+
+figure{
+    padding:0;
+    margin:0;
+}
+
+figure img{
+    width:100%;
+    height:100%;
+}
+
+a, p, .btn{
+    font-size:16px;
+}
+
+p{
+    line-height:1.9em;
+}
+
+h1, h2, h3, h4, h5, h6{
+    margin:0;
+}
+
+.title, .sub_title{
+    font-family:var(--title_font);
+}
+
+.flex, .fixed_flex{
+    display:flex;
+}
+
+.flex_content{
+    width:100%;
+}
+
+.arrow_btn{
+    position:relative;
+    color:inherit;
+    display:flex;
+    align-items:center;
+}
+
+.arrow_btn:before{
+    content:"";
+    position:absolute;
+    bottom:-2px;
+    left:0;
+    height:1px;
+    width:100%;
+    background-color:currentcolor;
+}
+
+.arrow_btn:after{
+    content:"\f061";
+    font-family:"FontAwesome";
+    position:absolute;
+    right:-20px;
+    top:50%;
+    transform:translate(0px, -50%) rotate(-45deg);
+    transition:0.5s;
+}
+
+.arrow_btn:hover:after{
+    transform:translate(0px, -50%) rotate(0deg);
+}
+
+@media screen and (max-width:720px){
+    a, p, .btn{
+        font-size:12px;
+    }
+}
+
+@media (max-width:300px){
+    a, p, .btn{
+        font-size:10px;
+    }
+}
+
+
+/*********************************
+  GSAP HORIZONTAL SCROLLTRIGGER
+**********************************/
+.gsap_horizontal_scrolltrigger{
+    background-color:var(--dark);
+    color:var(--white);
+}
+
+.gsap_cards{
+    display:flex;
+    align-items:center;
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+
+.gsap_cards .title, .gsap_cards .sub_title{
+    font-weight:400;
+}
+
+.gsap_cards em{
+    color:var(--neon_green);
+}
+
+.gsap_cards .title_header{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:40vw;
+    z-index:1;
+    text-transform:uppercase;
+}
+
+.gsap_cards .title_header .title{
+    font-size:3vw;
+}
+
+.gsap_cards .title_header:after, .gsap_cards .title_header:before{
+    content:"";
+    position:absolute;
+    top:50%;
+    right:-2rem;
+    transform:translate(0%, -50%) rotate(90deg);
+    width:93px;
+    height:60px;
+    background-image:url("../../assets/images/arrow.svg");
+    z-index:1;
+}
+
+.gsap_cards .title_header:before{
+    right:-6rem;
+}
+
+.gsap_cards .title_header .border_left:before{
+    left:-30px;
+}
+
+.gsap_card{
+    display:flex;
+    gap:1rem;
+    padding:1rem;
+    position:relative;
+    padding:2rem;
+    max-width:55vw;
+    flex: 0 0 auto;
+    align-items:center;
+}
+
+.gsap_card img{
+    max-height:60vh;
+    object-fit:cover;
+    object-position:top;
+}
+
+.gsap_card p{
+    font-weight:200;
+    opacity:0.6;
+}
+
+.gsap_card .arrow_btn{
+    color:var(--neon_green);
+    text-transform:uppercase;
+}
+
+@media (max-width:920px){
+    .gsap_cards .title_header, .gsap_card{
+        width:70vw;
+        min-width:70vw;
+    }
+}
+
+@media (max-width:720px){
+    .gsap_cards .title_header, .gsap_card{
+        width:100vw;
+        min-width:100vw;
+    }
+    
+    .gsap_cards .title_header .title{
+        font-size:20px;
+    }
+    
+    .gsap_cards .title_header:before{
+        right:1.6rem;
+    }
+    
+    .gsap_cards .title_header:after, .gsap_cards .title_header:before{
+        right:0rem;
+        width:85px;
+        height:55px;
+    }
+    
+    .gsap_cards .title_header .border_left:before{
+        left:-20px;
+    }
+}
