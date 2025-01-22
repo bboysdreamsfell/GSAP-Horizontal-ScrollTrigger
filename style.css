@@ -169,7 +169,7 @@ h1, h2, h3, h4, h5, h6{
     transform:translate(0%, -50%) rotate(90deg);
     width:93px;
     height:60px;
-    background-image:url("../../images/arrow.svg");
+    background-image:url("images/arrow.svg");
     z-index:1;
 }
 
